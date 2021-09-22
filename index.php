@@ -41,7 +41,7 @@ $faq = [
         Google LLC, con sede negli Stati Uniti, per il resto del mondo.
         La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.
         Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.
-        <h3>Stabilire il paese associato al tuo account</h3>
+        <h5>Stabilire il paese associato al tuo account</h5>
         Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese 
         da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell\'ultimo anno.
         I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno 
@@ -68,7 +68,10 @@ $faq = [
         disponibili qui. Le query di ricerca o le informazioni contenute nell\'URL referrer potrebbero essere disponibili mediante Google Analytics o un\'API (Application Programming Interface). 
         Inoltre, gli inserzionisti potrebbero ricevere informazioni relative all\' esatte parole chiave che hanno determinato il clic su un annuncio.'
     ]
-]
+];
+
+$nav = ['Introduzione', 'Norme sulla privacy', 'Termini di servizio', 'Tecnologie', 'Domande frequenti'];
+
 ?>
 
 
@@ -80,17 +83,51 @@ $faq = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style.css">
     <title>Google FAQs</title>
 </head>
 
 <body>
 
+    <header class="container-fluid border-bottom">
+        <div class="row">
+            <div class="col">
+                <img style="width: 75px;" src="./images/logo.png" alt="logo">
+            </div>
+            <div class="col-2">test</div>
+        </div>
+        <div class="row">
+            <nav>
+                <ul class="d-flex list-unstyled">
+                    <?php foreach ($nav as $menu) { ?>
+                        <li class="pe-3 pointer text-secondary"><?php echo $menu ?></li>
+                    <?php } ?>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <?php foreach ($faq as $val) { ?>
-        <h1><?php echo $val['title']; ?></h1>
-        <p><?php echo $val['description']; ?></p><br />
-    <?php } ?>
+
+    <main class="p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <?php foreach ($faq as $val) : ?>
+                        <h3><?php echo $val['title']; ?></h1>
+                            <p><?php echo $val['description']; ?></p><br />
+                        <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid bg-secondary">
+        <div class="row">
+            <div class="col-6">aaa</div>
+            <div class="col-6">aaa</div>
+        </div>
+    </footer>
 
 </body>
 
