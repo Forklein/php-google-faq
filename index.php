@@ -114,9 +114,9 @@ $nav = ['Introduzione', 'Norme sulla privacy', 'Termini di servizio', 'Tecnologi
             <div class="row">
                 <div class="col">
                     <?php foreach ($faq as $val) : ?>
-                        <h3><?php echo $val['title']; ?></h1>
-                            <p><?php echo $val['description']; ?></p><br />
-                        <?php endforeach; ?>
+                        <h3><?php echo $val['title']; ?></h3>
+                        <p><?php echo $val['description']; ?></p><br />
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
